@@ -1,0 +1,44 @@
+@import '../../sass/themes.scss';
+
+main {
+    display: grid;
+    grid-template-columns:  200px 200px 200px;
+    grid-gap: 0;
+        
+    app-square {
+        height: 200px;
+    }
+
+}
+
+.btn-new-game{
+    width: 13rem;
+    height: 6.4rem;
+    margin-bottom: 20px;
+    background-color: $galaxy-pink;
+    opacity: 0.8;
+    border: 0;
+    border-radius: 10px;
+    color: $star-white;
+    outline:none;
+    cursor: pointer;
+
+    &:hover{
+        opacity: 0.9;
+    }
+
+    &:active{
+        opacity: 1;
+    }
+}
+
+
+input[type="button"] {
+    width: 120px;
+    height: 60px;
+    margin-left: 35px;
+    display: block;
+    background-color: gray;
+    color: white;
+    border: none;
+  }

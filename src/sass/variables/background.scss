@@ -1,0 +1,60 @@
+@import './colors.scss';
+// BG
+
+.bg-reality-stone {
+    background-color:  $reality-stone ;
+    color: $star-white;
+}
+.bg-america-red{
+    background-color:  $america-red;
+    color: $star-white;
+}
+.bg-galaxy-pink{
+    background-color:  $galaxy-pink;
+    color: $star-white;
+}
+
+.bg-dust-pink{
+    background-color:  $dust-pink;
+    color: $star-white;
+}
+.bg-cosmic-pink{
+    background-color:  $cosmic-pink;
+    color: $star-white;
+}
+.bg-star-white{
+    background-color:  $star-white;
+    color: $star-white;
+}
+.bg-shine-blue{
+    background-color:  $shine-blue;
+    color: $star-white;
+}
+.bg-nebula{
+    background-color:  $nebula;
+    color: $star-white;
+}
+.bg-thanos{
+    background-color:  $thanos;
+    color: $star-white;
+}
+.bg-power-stone{
+    background-color:  $power-stone;
+    color: $star-white;
+}
+.bg-space-stone{
+    background-color:  $space-stone;
+    color: $star-white;
+}
+.bg-endgame{
+    background-color:  $endgame;
+    color: $star-white;
+}
+
+.main-background{
+    background: linear-gradient(180deg, $america-red 0%, #290238 100%), #1D1D44;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+}
