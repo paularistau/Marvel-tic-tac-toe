@@ -16,11 +16,13 @@ html{
     .tic-tac-button{
       width: 100%;
       height: 100%;
-      background: rgba($color: #FDFEF7, $alpha: 0.1);
+      background: transparent;
       color: white;
       font-family: -apple-system, Ubuntu, sans-serif;
       font-size: 4.2rem;
-    }
+      border: 1px solid $endgame;
+      outline: none;
 
+    }    
   }
 }
