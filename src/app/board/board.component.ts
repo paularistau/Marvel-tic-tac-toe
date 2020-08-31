@@ -34,6 +34,7 @@ export class BoardComponent implements OnInit {
 
     this.winner = this.calculateWinner()
     
+    
   }
 
   calculateWinner() {
