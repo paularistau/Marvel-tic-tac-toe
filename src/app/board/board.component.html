@@ -1,5 +1,6 @@
 <body>
-    <h1>Current Player: {{ player }}</h1>
+    <h1 *ngIf="!winner">Current Player: {{ player }}</h1>
+    <button class="btn-new-game h2" *ngIf="winner" (click)="newGame()">Start new Game</button>
     
     
     <h2 *ngIf="winner">
@@ -14,5 +15,4 @@
         </app-square>
     </main>
 
-    <button class="btn-new-game h2" (click)="newGame()">Start new Game</button>
 </body>
