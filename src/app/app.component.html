@@ -1,6 +1,7 @@
-
-
 <body>
   <img src="/assets/logo.png" class="logo-class">
-  <app-board></app-board>
+  <app-board *ngIf="startNewGame"></app-board>  
+
+  <app-search-character *ngIf="!startNewGame"></app-search-character>
+  <button *ngIf="!startNewGame" class="start-game-btn" (click)="startGame()">Start Game</button>
 </body>

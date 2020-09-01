@@ -7,13 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { CharacterComponent } from './characters/character/character.component';
 import { CharactersComponent } from './characters/characters.component';
 import { HttpClientModule} from '@angular/common/http'
+import { CharactersApiService} from './characters/character/shared/characters-api.service';
 import { FormsModule} from '@angular/forms'
-import { AutocompleteComponent } from './search/autocomplete/autocomplete.component';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ScoreComponent } from './score/score.component';
+import { SearchCharacterComponent } from './search-character/search-character.component';
  
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { ScoreComponent } from './score/score.component';
     CharactersComponent,
     AppComponent,
     ScoreComponent,
-    AutocompleteComponent
+    SearchCharacterComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +35,10 @@ import { ScoreComponent } from './score/score.component';
     AutocompleteLibModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+       
   ],
-  providers: [],
+  providers: [CharactersApiService],
   bootstrap: [AppComponent]
 })
 

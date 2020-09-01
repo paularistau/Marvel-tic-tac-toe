@@ -1,0 +1,21 @@
+@import '../sass/themes.scss';
+
+.start-game-btn{
+    width: 200px;
+    border: none;
+    height: 71px;
+    color: $star-white;
+    background: $endgame;
+    outline: none;
+    cursor: pointer;
+    float: right;
+    margin-top: 1.2rem;
+
+    &:hover{
+        opacity: 0.9;
+    }
+    &:active{
+        background-color: $reality-stone;
+    }
+
+}

@@ -8,13 +8,12 @@
         </app-square>
         
     </main>
-    <app-score></app-score>
-
-
+    
     <h2 *ngIf="!winner && !noWinner">Current Player: {{ player }}</h2>
     <h2 *ngIf="winner">
         Player {{ winner }} won the game! 
     </h2>
+    
     <button class="btn-new-game h2" *ngIf="winner || noWinner" (click)="newGame()">Start new Game</button>
     <h2 *ngIf="noWinner">Tie</h2>
     

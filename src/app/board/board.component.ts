@@ -11,8 +11,6 @@ export class BoardComponent implements OnInit {
   winner: string;
   noWinner: boolean;
   moves: number;
-  scorePlayerX: number;
-  scorePlayerO: number;
   
   
 
@@ -22,8 +20,6 @@ export class BoardComponent implements OnInit {
     this.newGame();
     localStorage.setItem("scorePlayerX", "0");
     localStorage.setItem("scorePlayerO", "0");
-    document.getElementById("scorePlayerX").innerHTML = localStorage.scorePlayerX;
-    document.getElementById("scorePlayerO").innerHTML = localStorage.scorePlayerO;
   }
 
   newGame() {
@@ -32,8 +28,6 @@ export class BoardComponent implements OnInit {
     this.xIsNext = true;
     this.noWinner = false;
     this.moves = 0;
-    this.scorePlayerX = 0
-    this.scorePlayerO = 0
   }
 
   get player() {
@@ -66,8 +60,8 @@ export class BoardComponent implements OnInit {
       console.log(scorePlayerO);
     }
 
-    document.getElementById("scorePlayerX").innerHTML = '  ' + localStorage.scorePlayerX;
-    document.getElementById("scorePlayerO").innerHTML = '  ' + localStorage.scorePlayerO;
+    document.getElementById("scorePlayerX").innerHTML = localStorage.scorePlayerX;
+    document.getElementById("scorePlayerO").innerHTML = localStorage.scorePlayerO;
     
   }
 
@@ -95,7 +89,4 @@ export class BoardComponent implements OnInit {
     }
     return null;
   }
-
-
-
 }

@@ -21,6 +21,14 @@ main {
         height: 200px;
 
     }
+
+    app-score{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
     
 } 
 .btn-new-game{
