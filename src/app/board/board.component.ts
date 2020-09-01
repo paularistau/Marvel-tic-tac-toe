@@ -20,12 +20,6 @@ export class BoardComponent implements OnInit {
     this.newGame();
     localStorage.setItem("scorePlayerX", "0");
     localStorage.setItem("scorePlayerO", "0");
-    window.onload = function()
-    {
-      document.getElementById("scorePlayerX").innerHTML = localStorage.scorePlayerX;
-      document.getElementById("scorePlayerO").innerHTML = localStorage.scorePlayerO;
-        
-    }
   }
 
   newGame() {
