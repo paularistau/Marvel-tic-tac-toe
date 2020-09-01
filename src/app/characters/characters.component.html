@@ -1,4 +1,25 @@
-<p *ngFor="let character of allCharacters | async">
-    {{character | json}}
-
-</p>
+<!-- 
+<div class="select-characters">
+    
+    <div class="ng-autocomplete">
+        <ng-autocomplete 
+          [data]="allCharacters"
+          [searchKeyword]="keyword"
+          (selected)='selectEvent($event)'
+          (inputChanged)='onChangeSearch($event)'
+          (inputFocused)='onFocused($event)'
+          [itemTemplate]="itemTemplate"
+          [notFoundTemplate]="notFoundTemplate">                                 
+        </ng-autocomplete>
+         
+        <ng-template #itemTemplate let-item>
+        <a [innerHTML]="item.name"></a>
+        </ng-template>
+         
+        <ng-template #notFoundTemplate let-notFound>
+        <div [innerHTML]="notFound"></div>
+        </ng-template>
+        </div> 
+        
+         
+</div> -->

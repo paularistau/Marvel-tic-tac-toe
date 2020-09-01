@@ -1,18 +1,21 @@
-<body>
-    <h1 *ngIf="!winner">Current Player: {{ player }}</h1>
-    <button class="btn-new-game h2" *ngIf="winner" (click)="newGame()">Start new Game</button>
-    
-    
-    <h2 *ngIf="winner">
-        Player {{ winner }} won the game! 
-    </h2>
-    
+
+<body>    
     <main>
         <app-square 
             *ngFor="let val of squares; let i = index"
             [value]="val"
             (click)="makeMove(i)">
         </app-square>
+        
     </main>
+    <app-score></app-score>
 
+
+    <h2 *ngIf="!winner && !noWinner">Current Player: {{ player }}</h2>
+    <h2 *ngIf="winner">
+        Player {{ winner }} won the game! 
+    </h2>
+    <button class="btn-new-game h2" *ngIf="winner || noWinner" (click)="newGame()">Start new Game</button>
+    <h2 *ngIf="noWinner">Tie</h2>
+    
 </body>

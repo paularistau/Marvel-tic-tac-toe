@@ -9,17 +9,31 @@ export class BoardComponent implements OnInit {
   squares: any[];
   xIsNext: boolean;
   winner: string;
+  noWinner: boolean;
+  moves: number;
+  scorePlayerX: number;
+  scorePlayerO: number;
+  
+  
 
   constructor() { }
 
   ngOnInit() {
     this.newGame();
+    localStorage.setItem("scorePlayerX", "0");
+    localStorage.setItem("scorePlayerO", "0");
+    document.getElementById("scorePlayerX").innerHTML = localStorage.scorePlayerX;
+    document.getElementById("scorePlayerO").innerHTML = localStorage.scorePlayerO;
   }
 
   newGame() {
     this.squares = Array(9).fill(null);
     this.winner = null;
     this.xIsNext = true;
+    this.noWinner = false;
+    this.moves = 0;
+    this.scorePlayerX = 0
+    this.scorePlayerO = 0
   }
 
   get player() {
@@ -27,13 +41,33 @@ export class BoardComponent implements OnInit {
   }
 
   makeMove(idx: number) {
-    if (!this.squares[idx] && !this.winner) {
+    if (!this.squares[idx] && !this.winner && !this.noWinner) {
       this.squares.splice(idx, 1, this.player)
-      this.xIsNext = !this.xIsNext;
+      this.moves = this.moves + 1;
+
+      console.log('MOVES', this.moves)
+      if(this.moves <= 9){
+        this.xIsNext = !this.xIsNext;
+      }
+      if(this.moves == 9 && !this.winner){
+        this.noWinner = true
+      }
+    }
+    this.winner = this.calculateWinner()
+
+    if(this.winner == 'X' && !this.noWinner){
+      var scorePlayerX = (parseInt(localStorage.getItem('scorePlayerX'))+1); 
+      localStorage.setItem("scorePlayerX", scorePlayerX.toString());
+      console.log(scorePlayerX);
+    }
+    if(this.winner == 'O' && !this.noWinner){
+      var scorePlayerO = (parseInt(localStorage.getItem('scorePlayerO'))+1);
+      localStorage.setItem("scorePlayerO", scorePlayerO.toString());
+      console.log(scorePlayerO);
     }
 
-    this.winner = this.calculateWinner()
-    
+    document.getElementById("scorePlayerX").innerHTML = '  ' + localStorage.scorePlayerX;
+    document.getElementById("scorePlayerO").innerHTML = '  ' + localStorage.scorePlayerO;
     
   }
 
@@ -57,8 +91,11 @@ export class BoardComponent implements OnInit {
       ) {
         return this.squares[a];
       }
+
     }
     return null;
   }
+
+
 
 }
