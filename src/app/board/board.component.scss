@@ -1,5 +1,9 @@
 @import '../../sass/themes.scss';
 
+body{
+    width: 100%;
+}
+
 main {
     display: grid;
     grid-template-columns:  200px 200px 200px;

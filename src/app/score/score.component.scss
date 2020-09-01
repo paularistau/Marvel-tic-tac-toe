@@ -1,0 +1,13 @@
+.score-content{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    .score-player-x, .score-player-o{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+    }
+}
